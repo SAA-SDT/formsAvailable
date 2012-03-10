@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+	datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+	<!-- Mark, Michael, Brad, Mike, Terrry -->
+	
+	<!-- The model below is intended serve as a basis for discussion. 
+		I can think of various various pro and con with respect to it. The models are not complete, as
+		my intention here is only to sketch the outlines of a possible solution. For example,
+		<container> does not match the content model as presently defined in EAD 2002. 
+		
+	I also suggest that you take a look at <altformavail> and <originalsloc>, as it occurs to me that 
+	though each of these elements is not defined appropriately, it seems reasonable to me
+	to raise the possibility of adjusting the definition of each (and their content models)
+	to address the "forms available" requirement. -->
+	
+	<start>
+		<element name="formsAvailable">
+			<oneOrMore>
+				<element name="form">
+					<optional>
+						<attribute name="version">
+							<choice>
+								<value>original</value>
+								<value>derived</value>
+							</choice>
+						</attribute>
+					</optional>
+					<optional>
+						<element name="term">
+							<!-- [recommend terms but do not prescribe: e.g., digital image] -->
+							<text/>
+						</element>
+					</optional>
+					<choice>
+						<oneOrMore>
+							<element name="container">
+								<text/>
+							</element>
+						</oneOrMore>
+						<element name="ref">
+							<attribute name="href">
+								<data type="anyURI"/>
+							</attribute>
+						</element>
+					</choice>
+				</element>
+			</oneOrMore>
+		</element>
+	</start>
+</grammar>
+

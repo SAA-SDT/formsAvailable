@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:/Users/dvp4c/Desktop/formsAvailable.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<formsAvailable>
+	<form version="original">
+		<container>Box 1</container>
+		<container>Folder 2</container>
+	</form>
+	<form version="derived">
+		<term>[recommend terms but do not prescribe: e.g., digital image]</term>
+		<ref href="http://bob.com"/>
+	</form>
+	<form version="derived">
+		<term>microfilm</term>
+		<container>Reel 1</container>
+		<container>Frame 3</container>
+	</form>
+</formsAvailable>
